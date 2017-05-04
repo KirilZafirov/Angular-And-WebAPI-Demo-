@@ -1,0 +1,17 @@
+﻿<div ng-controller="placeListCtrl as vm">
+    
+   
+    <section ng-repeat="place in vm.places|orderBy:vm.sortOrderForPlace | limitTo:3">
+        <a href="#" class="image"><img ng-src="{{place.image}}" alt="" data-position="center center" /></a>
+        <div class="content">
+            <div class="inner">
+                <h2>{{place.name}}</h2>
+                <p>{{place.type}},<br />{{place.drive}},<br />
+                <a target="_blank" ng-href="{{place.mapCoordinates}}">Location</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+   

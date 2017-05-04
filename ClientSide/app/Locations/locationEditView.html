@@ -1,0 +1,116 @@
+﻿<form class="form-horizontal"
+      name="locationForm"
+      novalidate
+      ng-controller="locationEditCtrl as vm">
+    <fieldset>
+        <legend>Location Information</legend>
+        <div class="form-group"
+             ng-class="{'has-error':locationForm.inputLocationName.$invalid &&
+                                    locationForm.inputLocationName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputLocationName">Location Name</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputLocationName"
+                       name="inputLocationName"
+                       type="text"
+                       placeholder="Location Name (required)"
+                       ng-model="vm.location.name"
+                       required
+                       ng-minlength="4"
+                       ng-maxlength="12" />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="locationForm.name.$error.required">
+                    Location name is required.
+                </span>
+                <span ng-show="locationForm.name.$error.minlength">
+                    Location name must be at least 4 characters in length.
+                </span>
+                <span ng-show="locationForm.name.$error.maxlength">
+                    Location name cannot exceed 12 characters in length.
+                </span>
+            </span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':locationForm.inputLocationPlace.$invalid &&
+                                    locationForm.inputLocationPlace.$dirty}">
+            <label class="col-md-2 control-label" for="inputLocationPlace">Location Place</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputLocationPlace"
+                       name="inputLocationPlace"
+                       type="text"
+                       placeholder="Location Place (required)"
+                       ng-model="vm.location.place"
+                       required>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="locationForm.inputLocationPlace.$invalid ">
+               Location Place is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputLocationPrice">Price</label>
+
+            <div class="col-md-4">
+                
+                    <input class="form-control"
+                           id="inputLocationPriceForStaying"
+                           name="inputLocationPriceForStaying"
+                           type="text"
+                           placeholder="Price (required)"
+                           ng-model="vm.location.priceForStaying"
+                           required>
+                <div class="form-control">
+                    {{vm.location.priceForStaying|currency }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputDescription">Description</label>
+
+            <div class="col-md-10">
+                <textarea class="form-control"
+                          id="inputDescription"
+                          name="inputDescription"
+                          placeholder="Description"
+                          rows="3"
+                          ng-model="vm.location.description"></textarea>
+            </div>
+            <br />
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span class="button special"
+                            style="margin-right:10px"
+                            ng-click="vm.submit()"
+                            ng-disabled="locationForm.$invalid">
+                       Save
+                </span>
+                <span class="button"
+                            
+                            ng-click="vm.cancel(locationForm)">
+                   Cancel
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group"
+             ng-show="vm.message">
+            <div class="col-md-6">
+                <pre style="font: inherit">{{vm.message }}</pre>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+

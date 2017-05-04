@@ -1,0 +1,109 @@
+﻿
+        #intro {
+            background: url(https://superdevresources.com/wp-content/uploads/2015/12/new-york-background.jpg) no-repeat center center fixed;
+
+            background-size: cover;
+        }
+
+        #wrap {
+            max-width: 85.375rem;
+            margin: 0 auto;
+        }
+
+        #screen-reader-text {
+            height: auto;
+            width: 1px;
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            overflow: hidden;
+            position: absolute !important;
+        }
+
+            #screen-reader-text:hover, #screen-reader-text:active, #screen-reader-text:focus {
+                height: auto;
+                width: auto;
+                background-color: #000000;
+                border-radius: 2px;
+                box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+                clip: auto !important;
+                color: #FFFFFF;
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 700;
+                left: 0.3125rem;
+                line-height: normal;
+                padding: 0.9375rem 1.4375rem 0.875rem;
+                text-decoration: none;
+                top: 0.3125rem;
+                z-index: 100000;
+            }
+
+        #search-form {
+            display: inline-block;
+            float: right;
+            position: relative;
+            width: 100%;
+        }
+
+        #search-field,
+        #search-submit {
+            height: 3.75rem;
+        }
+
+        #search-field {
+            position: absolute;
+            right: 0;
+            -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            background-color: transparent;
+            border: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            font-size: 2.25rem;
+            font-weight: 300;
+            opacity: 0;
+            padding-right: 3.75rem;
+            width: 0;
+            z-index: 3;
+            transform: scale(1.1,1.8);
+        }
+
+            #search-field:focus {
+                cursor: text;
+                opacity: 1;
+                outline: none;
+                width: 100%;
+                z-index: 1;
+            }
+
+                #search-field:focus:hover ~ #search-submit #fa-search {
+                    color: #FFFFFF;
+                }
+
+            #search-field:hover ~ #search-submit #fa-search {
+                color: white;
+            }
+
+        #search-submit {
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            background-color: transparent;
+            border: none;
+            float: right;
+            position: relative;
+            width: 3.75rem;
+            z-index: 2;
+        }
+
+            #search-submit:hover #fa-search {
+                color: white;
+            }
+
+        #fa-search {
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            color: #FFFFFF;
+            font-size: 2.25rem;
+        }

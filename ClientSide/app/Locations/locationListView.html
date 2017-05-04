@@ -1,0 +1,77 @@
+﻿<div class="features" ng-controller="locationListCtrl as vm">
+    Sort By:
+    <select ng-model="vm.sortOrderForLocation" class="input-medium">
+        <option selected value="name">Name</option>
+        <option selected value="-upVoteCount">Up Vote Count</option>
+        <option selected value="type">Type</option>
+        <option selected value="rating">Rating</option>
+    </select>
+    <select ng-model="query" class="input-medium">
+        <option selected value="">All</option>
+        <option selected value="Osogovo">Osogovo</option>
+        <option selected value="Brana Gradce">Brana Gradce</option>
+        <option selected value="Trgovski Centar">Trgovski Centar</option>
+    </select>
+    <section ng-repeat="location in vm.locations| orderBy:vm.sortOrderForLocation |limitTo:5 | filter:query" style="box-shadow: 2px 2px 2px aliceblue;">
+        <i class="fa fa-home fa-lg" aria-hidden="true"></i>
+            <span> {{location.rating}}</span>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        <div class="table-wrapper">
+            <table class="alt">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Place</th>
+                        <th>Price for Night</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{location.name}}</td>
+                        <td>{{location.place}} </td>
+                        <td>{{location.priceForStaying|currency}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>Summary Price</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+            <div class="row">
+                <div class="col-md-2 pull-left">
+                    <div class="row">
+                        <div class="btn btn-success col-xs-6" ng-click="vm.upVoteLocation(location)">
+                            <i class="fa fa-thumbs-up fa-lg">  {{location.upVoteCount}}</i>
+                        </div>
+                        <div class="btn btn-info col-xs-6" ng-click="vm.showInformationAboutThePlace()">
+                            <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+                        </div>
+                        <div class="btn btn-danger col-xs-6" ng-click="vm.downVoteLocation(location)">
+                            <i class="fa fa-thumbs-down fa-lg">  {{location.downVoteCount}}</i>
+                        </div>
+                        <div class="btn btn-warning col-xs-6" ng-click="vm.hideInformationAboutThePlace()">
+                            <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 pull-right" ng-hide="vm.showInfo">
+                    <div><p><span>{{location.description}}</span></p></div>
+                </div>
+            </div>
+        <div ng-hide="vm.showInfo">
+            <span ng-repeat="image in location.imageNames" class="image right">
+                <img ng-src="Images/{{image.imageName}}.jpg" alt="" />
+            </span>
+        </div>
+        <div class="btn" style="position:absolute;bottom:0;right:0;">
+            <a href="#one" class="scrolly"><i class="fa fa-arrow-circle-up fa-lg" aria-hidden="true"></i></a>
+        </div>
+    </section>
+</div>

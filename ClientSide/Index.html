@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="app/app.js"></script>
+    <script src="common/common.services.js"></script>
+    <script src="app/Locations/locationListCtrl.js"></script>
+    <script src="common/locationResource.js"></script>
+    <link href="Content/main.css" rel="stylesheet" />
+    <link href="Content/IntoStyles.css" rel="stylesheet" />
+</head>
+<body ng-app="locationManagement" ng-controller="MainCtrl as vm">
+  
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Welcome</a></li>
+                    <li><a href="#one">Places</a></li>
+                    <li><a href="#two" ng-click="vm.showLocations()">Locations</a></li>
+                    <li><a href="#three">Ask Us</a></li>
+                    <li><a href="/History.html">History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div id="wrapper">
+ 
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
+            <div class="inner" style="text-align: center;">
+                <!-- Trying to add search method here -->
+                <h1>Visit</h1>
+                <div id="wrap">
+                    <form method="get" id="search-form" action="#">
+                        <label for="search-field" style="border:none;"><span id="screen-reader-text">To search this site, enter a search term</span></label>
+                        <input id="search-field" type="text" name="s" value="" aria-required="false" autocomplete="off" placeholder="Search&hellip;" />
+                        <button id="search-submit"><span id="screen-reader-text">Search</span><i id="fa-search" class="fa fa-search"></i></button>
+						
+                    </form>
+                    <!-- End Your Code -->
+                </div><!-- .wrap -->
+                <ul class="actions">
+                    <li><a href="#two" class="button scrolly" ng-click="vm.showLocations()">Pick Location</a></li>
+                    <li><a href="#two" class="button scrolly" ng-show="vm.locationsToBeShown" ng-click="vm.hideLocations()">Hide Location</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- One -->
+        <section id="one" class="wrapper style2 spotlights" ng-controller="placeListCtrl as vm">
+				<input type="text" ng-model="query" class="input-medium" placeholder="Find Place or Location"/>
+                <select ng-model="query" class="input-medium">
+                    <option selected value="">All</option>
+                    <option selected value="Osogovo">Osogovo</option>
+                    <option selected value="Brana Gradce">Brana Gradce</option>
+                    <option selected value="Trgovski Centar">Trgovski Centar</option>
+                </select>
+            <section ng-repeat="place in vm.places |limitTo:3 | filter:query">
+                <a href="#" class="image"><img ng-src="{{place.image}}" alt="" data-position="center" style="width:100%;"/></a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>{{place.name}}</h2>
+
+                        <p>{{place.type}}<br />{{place.drive}},<br /><a target="_blank" ng-href="{{place.mapCoordinates}}">Location</a></p>
+                        <ul class="actions">
+                            <li><a href="#two" class="button" ng-click="showMePlaces(location)">Show Places in {{place.name}}</a></li>
+                            <li><a href="#one" class="button" ng-show="placesToVisit" ng-click="hidePlaces()">Hide Places</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Two -->
+        <section id="two" class="wrapper style3 fade-up" ng-show="vm.locationsToBeShown">
+            <div class="inner">
+                <div ng-include="'app/Locations/locationListView.html'"></div>
+                <ul class="actions">
+                    <li><a href="#" class="button">Learn more</a></li>
+                </ul>
+            </div>
+           
+            <div class="container" ng-if="vm.isLoggedIn()">
+                <div ng-include="'app/Locations/locationEditView.html'">
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Three -->
+        <section id="three" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2>Ask Us</h2>
+                <div class="split style1">
+                    <section>
+                        <form method="post" action="#">
+                            <div class="field half first">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="5"></textarea>
+                            </div>
+                            <ul class="actions">
+                                <li><a href="" class="button submit">Send Message</a></li>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <ul class="contact">
+                            <li>
+                                <h3>Address</h3>
+                                <span>
+                                    4-ta Makedonska Brigada broj 18<br />
+                                    Kochani, 2300<br />
+                                    Macedonia
+                                </span>
+                            </li>
+                            <li>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a type="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
+                                    <a type="button" class="btn btn-info"><i class="fa fa-skype"></i> Skype</a>
+                                    <a type="button" class="btn btn-success" href="mailto:kiril_zafirov@yahoo.com"><i class="fa fa-envelope-o"></i> Email</a>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Social</h3>
+                                <ul class="icons">
+                                    <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+                                    <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+                                    <li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+                                    <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <form ng-hide="vm.isLoggedIn()">
+                        <div class="row uniform">
+                            <div class="3u 12u$(xsmall)">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="username (email)"
+                                       ng-model="vm.userData.email">
+                            </div>
+                            <div class="3u$ 12u$(xsmall)">
+                                <input type="password"
+                                       class="form-control"
+                                       placeholder="password"
+                                       ng-model="vm.userData.password">
+                            </div>
+                            <div class="12u$">
+                                <ul class="actions">
+                                    <li><input type="submit" value="Login" class="special" ng-click="vm.login()" /></li>
+                                    <li><input type="submit" value="Register" class="special" ng-click="vm.registerUser()" /></li>
+                                </ul>
+                            </div>
+                            <div ng-show="vm.message">{{vm.message}}</div>
+                        </div>
+                    </form>
+
+
+                 
+                </div>
+                <div class="col-md-12">
+                    <ul class="menu">
+                        <li>&copy;Kiril Zafirov| 159006</li>
+                        <li>Project for: <a href="https://mk.linkedin.com/in/ivan-chorbev-7878823">Multimedia and Scalable Web Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+          
+           
+        </div>
+    </footer>
+    
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery.scrollex.min.js"></script>
+    <script src="Scripts/jquery.scrolly.min.js"></script>
+    <script src="app/Locations/locationEditCtrl.js"></script>
+    <script src="app/mainCtrl.js"></script>
+    <script src="common/userAccount.js"></script>
+    <script src="common/currentUser.js"></script>
+    <script src="app/Places/placeListCtrl.js"></script>
+    <script src="Scripts/skel.min.js"></script> 
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/util.js"></script>
+</body> 
+</html>

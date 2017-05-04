@@ -1,0 +1,182 @@
+[
+  {
+    "Id": 1,
+    "Name": "Euro Hotel Gradce",
+    "Place": "Brana Gradce",
+    "PriceForStaying": 28.65,
+    "Description": "This is going to be some Description about this location",
+    "UpVoteCount": 0,
+    "DownVoteCount": 0,
+    "Rating": 3,
+    "ImageNames": [
+      {
+        "Id": 1,
+        "ImageName": "BranaGradce01"
+      },
+      {
+        "Id": 2,
+        "ImageName": "BranaGradce02"
+      },
+      {
+        "Id": 3,
+        "ImageName": "BranaGradce03"
+      },
+      {
+        "Id": 4,
+        "ImageName": "BranaGradce04"
+      },
+      {
+        "Id": 5,
+        "ImageName": "BranaGradce05"
+      },
+      {
+        "Id": 6,
+        "ImageName": "BranaGradce06"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Osogovska Kukja",
+    "Place": "Kochani",
+    "PriceForStaying": 20.65,
+    "Description": "This is going to be some Description about this location\nVery good place that is worth to be visited by everyone from youngest to oldest of age",
+    "UpVoteCount": 0,
+    "DownVoteCount": 0,
+    "Rating": 4,
+    "ImageNames": [
+      {
+        "Id": 1,
+        "ImageName": "Kochani01"
+      },
+      {
+        "Id": 2,
+        "ImageName": "Kochani02"
+      },
+      {
+        "Id": 3,
+        "ImageName": "Kochani03"
+      },
+      {
+        "Id": 4,
+        "ImageName": "Kochani04"
+      },
+      {
+        "Id": 5,
+        "ImageName": "Kochani05"
+      },
+      {
+        "Id": 6,
+        "ImageName": "Kochani06"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Ponikva",
+    "Place": "Osogovo",
+    "PriceForStaying": 35.65,
+    "Description": "This is going to be some Description about this location",
+    "UpVoteCount": 0,
+    "DownVoteCount": 0,
+    "Rating":3,
+   "ImageNames": [
+      {
+        "Id": 1,
+        "ImageName": "Ponikva01"
+      },
+      {
+        "Id": 2,
+        "ImageName": "Ponikva02"
+      },
+      {
+        "Id": 3,
+        "ImageName": "Ponikva03"
+      },
+      {
+        "Id": 4,
+        "ImageName": "Ponikva04"
+      },
+      {
+        "Id": 5,
+        "ImageName": "Ponikva05"
+      },
+      {
+        "Id": 6,
+        "ImageName": "Ponikva06"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Amor",
+    "Place": "Kochani",
+    "PriceForStaying": 45.0,
+    "Description": "really good restaurant to stay and eat with your family",
+    "UpVoteCount": 0,
+    "DownVoteCount": 0,
+    "Rating":4,
+    "ImageNames": [
+      {
+        "Id": 1,
+        "ImageName": "pic01"
+      },
+      {
+        "Id": 2,
+        "ImageName": "pic02"
+      },
+      {
+        "Id": 3,
+        "ImageName": "pic03"
+      },
+      {
+        "Id": 4,
+        "ImageName": "pic04"
+      },
+      {
+        "Id": 5,
+        "ImageName": "pic05"
+      },
+      {
+        "Id": 6,
+        "ImageName": "pic06"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Lenchka",
+    "Place": "Brana Gradce",
+    "PriceForStaying": 35.0,
+    "Description": "adakjbsjfbajabklsdfsfsfsdfsdfsds",
+    "UpVoteCount": 0,
+    "DownVoteCount": 0,
+    "Rating":5,
+    "ImageNames": [
+      {
+        "Id": 1,
+        "ImageName": "pic01"
+      },
+      {
+        "Id": 2,
+        "ImageName": "pic02"
+      },
+      {
+        "Id": 3,
+        "ImageName": "pic03"
+      },
+      {
+        "Id": 4,
+        "ImageName": "pic04"
+      },
+      {
+        "Id": 5,
+        "ImageName": "pic05"
+      },
+      {
+        "Id": 6,
+        "ImageName": "pic06"
+      }
+    ]
+  }
+]

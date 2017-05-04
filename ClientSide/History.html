@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="app/app.js"></script>
+    <script src="common/common.services.js"></script>
+    <script src="app/Locations/locationListCtrl.js"></script>
+    <script src="common/locationResource.js"></script>
+    <link href="Content/main.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.1/es6-promise.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//cdn.muicss.com/mui-0.5.1/js/mui.min.js"></script>
+    <script src="//goinggas.com/cdn/dashtimer/v0.1/dashtimer.js"></script>
+    <script src="app/liquidFillGauge.js"></script>
+    <link href="Content/IntoStyles.css" rel="stylesheet" />
+    <style>
+        .liquidFillGaugeText {
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body ng-app="locationManagement" ng-controller="MainCtrl as vm">
+  
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="/Index.html#intro">Welcome</a></li>
+                    <li><a href="/Index.html#one">Places</a></li>
+                    <li><a href="/Index.html#two" ng-click="vm.showLocations()">Locations</a></li>
+                    <li><a href="/Index.html#three">Ask Us</a></li>
+                    <li><a href="/History.html">History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div id="wrapper">
+ 
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
+            <div class="inner" style="text-align: center;">
+                <div id="wrap">
+                 <h1>History</h1>
+                <section>
+                    Due to its favourable geographic location, together with excellent natural climate characteristics,
+                    Kočani was inhabited as early as the ancient times first by the Paionians, Meds and Thracians.
+                 Later on, in the 6th century the Slavs inhabited parts of the region. More precisely, in the 7th century members of the Slavic tribe 
+                Smolyani colonized the Kočani valley and built a fortification. The founders of the Slavic education, brothers Kiril and Metodij (Cyril and Methodius), 
+                stayed in the valley from the year 845 to 855 and in the Bregalnica area (Morodvis) started to preach Christianity in Slavic language.
+
+                    Although the settlement existed long before that, Kočani was first mentioned in a charter from 1337 in which Despot Jovan Oliver
+                   donated the church of St. Dimitrija to Kočani.
+
+                    Archaeological finds in the town itself have revealed remains of a settlement here in the Roman and Byzantine periods.
+                    Early in the 15th century it fell under Turkish rule. The travel chronicler Evliya Chelebi, who visited it in 1662, recorded that it had 600 households,
+                    a mosque, a mezjid, an inn and 15 handicraft stores. During the 18th and in the early 19th century, the town growth rate stagnated. 
+                    It was only around 1878 that the population began to rise, at which time it had about 450 - 500 households.
+                    The town has two feudal residences in the shape of towers believed to date from the 16th - 17th century.
+                  </section>
+                    <h1>Monuments</h1>
+                <section>
+                    Numerous cultural and historical monuments, from ancient times to the Middle Ages, can be found in the vicinity of Kočani.
+                     One of them is an archeological site of Dolno Gradishte from the late antic period, and two medieval towers at the city center.
+
+                    Monastery complexes in the nearby villages Morodvis and Panteley are world famous both for their architecture and unique frescoes.
+                    </section>
+                <h1>Features</h1>
+                <section>
+                    The town green, especially along the river bed and banks of the Kočani river, is the pride of the local people. 
+                    The town is very clean and neat, for which it proudly holds the prestigious title of The cleanest town in Macedonia.
+
+                    Today Kočani is a modern town with planned infrastructure, avenues, many modern buildings and blocks of flats, a hospital, a shopping centre,
+                     a park and a newly built industrial zone. All this is carefully planned and structured, according to modern standards of living and esthetics. 
+                    New suburbs are mainly built to the east where the town almost reaches the first houses of Orizari and to the West spreading over the industrial zone.
+                </section>
+                </div><!-- .wrap -->
+               
+            </div>
+        </section>
+    </div>
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <h3>Current Population</h3>
+            <svg id="fillgauge1" width="50%" height="150"></svg>
+            <span id="clock">
+            </span>
+        </div>
+    </footer>
+    
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery.scrollex.min.js"></script>
+    <script src="Scripts/jquery.scrolly.min.js"></script>
+    <script src="app/Locations/locationEditCtrl.js"></script>
+    <script src="app/mainCtrl.js"></script>
+    <script src="common/userAccount.js"></script>
+    <script src="common/currentUser.js"></script>
+    <script src="app/Places/placeListCtrl.js"></script>
+    <script src="Scripts/skel.min.js"></script> 
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/util.js"></script>
+    <script src="app/Clock.js"></script>
+    <script src="app/fillCapacity.js"></script>
+</body> 
+</html>
